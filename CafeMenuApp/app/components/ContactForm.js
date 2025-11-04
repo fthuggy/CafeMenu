@@ -1,5 +1,11 @@
 import React from "react";
-import { View, TextInput, Button, StyleSheet } from "react-native";
+import {
+  View,
+  TextInput,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import { Formik } from "formik";
 
 const ContactForm = ({ onSubmit }) => {
@@ -14,14 +20,14 @@ const ContactForm = ({ onSubmit }) => {
       {({ handleChange, handleBlur, handleSubmit, values }) => (
         <View style={styles.container}>
           <TextInput
-            placeholder="Namn"
+            placeholder="Name"
             style={styles.input}
             onChangeText={handleChange("name")}
             onBlur={handleBlur("name")}
             value={values.name}
           />
           <TextInput
-            placeholder="E-post"
+            placeholder="Email"
             style={styles.input}
             onChangeText={handleChange("email")}
             onBlur={handleBlur("email")}
@@ -29,7 +35,7 @@ const ContactForm = ({ onSubmit }) => {
             keyboardType="email-address"
           />
           <TextInput
-            placeholder="Meddelande"
+            placeholder="Message"
             style={[styles.input, styles.textArea]}
             onChangeText={handleChange("message")}
             onBlur={handleBlur("message")}
@@ -38,7 +44,7 @@ const ContactForm = ({ onSubmit }) => {
             numberOfLines={4}
           />
           <View style={styles.buttonWrapper}>
-            <Button title="Send" onPress={handleSubmit} />
+            <Button title="Send" onPress={handleSubmit} color="#ffffff" />
           </View>
         </View>
       )}
@@ -69,7 +75,6 @@ const styles = StyleSheet.create({
   buttonWrapper: {
     marginTop: 10,
     borderRadius: 8,
-    overflow: "hidden",
     backgroundColor: "#000",
   },
 });

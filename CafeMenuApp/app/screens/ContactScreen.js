@@ -1,29 +1,38 @@
-import { StyleSheet, Text, View, ImageBackground, Alert,  TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  Alert,
+  TouchableOpacity,
+} from "react-native";
 import ContactCard from "../components/ContactCard";
 import ContactForm from "../components/ContactForm";
 import { MaterialIcons } from "@expo/vector-icons";
-const handleFormSubmit = (FormData) =>{
-console.log("Form submitted:", FormData);
 
-Alert.alert("Thank you! Your message has been sent.");
-}
-function ContactScreen({navigation}) {
+function ContactScreen({ navigation }) {
+  const [formVisible, setFormVisible] = useState(false);
+
+  const handleFormSubmit = (FormData) => {
+    console.log("Form submitted:", FormData);
+
+    Alert.alert("Thank you! Your message has been sent.");
+  };
+
   return (
-
     <ImageBackground
       blurRadius={10}
       style={styles.background}
       source={require("../assets/cafe.jpg")}
     >
-       <TouchableOpacity
-                style={{ position: "absolute", top: 50, left: 20, zIndex: 10 }}
-                onPress={() => navigation.goBack()}
-              >
-                <MaterialIcons name="arrow-back-ios-new" size={24} color="white" />
-              </TouchableOpacity>
+      <TouchableOpacity
+        style={{ position: "absolute", top: 50, left: 20, zIndex: 10 }}
+        onPress={() => navigation.goBack()}
+      >
+        <MaterialIcons name="arrow-back-ios-new" size={24} color="white" />
+      </TouchableOpacity>
       <View style={styles.container}>
-       
         <Text style={styles.title}>Contact Us</Text>
       </View>
       <View style={styles.card}>
@@ -35,21 +44,31 @@ function ContactScreen({navigation}) {
           onPress={() => console.log("button pressed")}
         />
         <ContactCard
-         name="phone"
+          name="phone"
           title="Call us"
           text="070- 5860 399"
           buttonLabel="Call"
-          onPress={() => console.log("button pressed")} />
+          onPress={() => console.log("button pressed")}
+        />
         <ContactCard
-         name="message"
+          name="message"
           title="Send a message"
           text="Questions, feedback or bookings?"
           buttonLabel="Open form"
-          onPress={() => console.log("button pressed")} />
+          onPress={() => setFormVisible(true)} 
+        />
       </View>
-       <View style={styles.formContainer}>
-      <ContactForm onSubmit={handleFormSubmit} />
-    </View>
+      {formVisible && (
+        <View style={styles.formContainer}>
+          <ContactForm onSubmit={handleFormSubmit} />
+          <TouchableOpacity
+            onPress={() => setFormVisible(false)}
+            style={styles.closeButton}
+          >
+            <Text style={{ color: "white" }}>Close</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </ImageBackground>
   );
 }
@@ -70,6 +89,22 @@ const styles = StyleSheet.create({
   },
   card: {
     alignSelf: "center",
+  },
+    formContainer: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    backgroundColor: "#fff",
+    padding: 20,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+  },
+  closeButton: {
+   
+    alignSelf: "center",
+    padding: 10,
+    backgroundColor: "#000",
+    borderRadius: 10,
   },
 });
 
