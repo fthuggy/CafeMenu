@@ -5,12 +5,14 @@ import {
   View,
   FlatList,
   ImageBackground,
+  TouchableOpacity,
 } from "react-native";
 import { menuItems } from "../data/MenuItems";
 import MenuItem from "../components/MenuItem";
 import FilterButtons from "../components/FilterButtons";
+import { MaterialIcons } from "@expo/vector-icons";
 
-export default function MenuScreen() {
+function MenuScreen({ navigation }) {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   // Filter items
@@ -32,6 +34,12 @@ export default function MenuScreen() {
       style={styles.background}
       source={require("../assets/cafe.jpg")}
     >
+      <TouchableOpacity
+        style={{ position: "absolute", top: 50, left: 20, zIndex: 10 }}
+        onPress={() => navigation.goBack()}
+      >
+        <MaterialIcons name="arrow-back-ios-new" size={24} color="white" />
+      </TouchableOpacity>
       <Text style={styles.title}>Our Menu</Text>
 
       <View style={styles.container}>
@@ -67,3 +75,4 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
 });
+export default MenuScreen;

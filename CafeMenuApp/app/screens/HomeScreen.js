@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import React from "react";
 import CustomButton from "../components/CustomButton";
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
     <ImageBackground
       blurRadius={10}
@@ -17,11 +17,11 @@ function HomeScreen() {
         <View style={styles.buttonContainer}>
           <CustomButton
             title="Menu"
-            onPress={() => console.log("Menu Presed")}
+            onPress={() => navigation.navigate("Menu")}
           />
           <CustomButton
             title="Contact"
-            onPress={() => console.log("Contact Presed")}
+            onPress={() => navigation.navigate("Contact")}
           />
         </View>
       </View>

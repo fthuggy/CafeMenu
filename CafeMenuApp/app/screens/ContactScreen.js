@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View, ImageBackground, Alert } from "react-native";
+import { StyleSheet, Text, View, ImageBackground, Alert,  TouchableOpacity } from "react-native";
 import React from "react";
 import ContactCard from "../components/ContactCard";
 import ContactForm from "../components/ContactForm";
-
+import { MaterialIcons } from "@expo/vector-icons";
 const handleFormSubmit = (FormData) =>{
 console.log("Form submitted:", FormData);
 
 Alert.alert("Thank you! Your message has been sent.");
 }
-function ContactScreen() {
+function ContactScreen({navigation}) {
   return (
 
     <ImageBackground
@@ -16,7 +16,14 @@ function ContactScreen() {
       style={styles.background}
       source={require("../assets/cafe.jpg")}
     >
+       <TouchableOpacity
+                style={{ position: "absolute", top: 50, left: 20, zIndex: 10 }}
+                onPress={() => navigation.goBack()}
+              >
+                <MaterialIcons name="arrow-back-ios-new" size={24} color="white" />
+              </TouchableOpacity>
       <View style={styles.container}>
+       
         <Text style={styles.title}>Contact Us</Text>
       </View>
       <View style={styles.card}>
