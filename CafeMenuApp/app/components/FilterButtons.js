@@ -11,39 +11,39 @@ const categories = ["all", "tea", "coffee", "juice", "bakery"];
 function FilterButtons({ selectedCategory, onSelectCategory }) {
   return (
     <View>
- <FlatList
-      data={categories}
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={{ paddingHorizontal: 5 }}
-      renderItem={({ item }) => (
-        <TouchableOpacity
-          style={[
-            styles.button,
-            selectedCategory === item && styles.selectedButton,
-          ]}
-          onPress={() => onSelectCategory(item)}
-        >
-          <Text
+      <FlatList
+        data={categories}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ paddingHorizontal: 5 }}
+        renderItem={({ item }) => (
+          <TouchableOpacity
             style={[
-              styles.text,
-              selectedCategory === item && styles.selectedText,
+              styles.button,
+              selectedCategory === item && styles.selectedButton,
             ]}
+            onPress={() => onSelectCategory(item)}
           >
-            {item}
-          </Text>
-        </TouchableOpacity>
-      )}
-    />
+            <Text
+              style={[
+                styles.text,
+                selectedCategory === item && styles.selectedText,
+              ]}
+            >
+              {item}
+            </Text>
+          </TouchableOpacity>
+        )}
+      />
     </View>
-   
   );
 }
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#000",
-    borderRadius: 10,
+    backgroundColor: "rgba(255, 255, 255, 0.2)",
+    borderColor: "rgba(255, 255, 255, 0.3)",
+    borderRadius: 15,
     paddingVertical: 15,
     marginHorizontal: 5,
     justifyContent: "center",
@@ -58,10 +58,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     textAlign: "center",
-    color: "#fff",
+    color: "#513404ff",
   },
   selectedText: {
-    color: "#000",
+    color: "#513404ff",
   },
 });
 

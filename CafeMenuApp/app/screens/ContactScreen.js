@@ -22,9 +22,9 @@ function ContactScreen({ navigation }) {
 
   return (
     <ImageBackground
-      blurRadius={10}
+      blurRadius={5}
       style={styles.background}
-      source={require("../assets/cafe.jpg")}
+      source={require("../assets/contact.jpg")}
     >
       <TouchableOpacity
         style={{ position: "absolute", top: 50, left: 20, zIndex: 10 }}
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
    
     alignSelf: "center",
     padding: 10,
-    backgroundColor: "#000",
+    backgroundColor:"#513404ff",
     borderRadius: 10,
   },
 });

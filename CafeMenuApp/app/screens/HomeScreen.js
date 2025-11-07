@@ -5,9 +5,9 @@ import CustomButton from "../components/CustomButton";
 function HomeScreen({ navigation }) {
   return (
     <ImageBackground
-      blurRadius={10}
+      blurRadius={3}
       style={styles.background}
-      source={require("../assets/cafe.jpg")}
+      source={require("../assets/coffeshop5.jpg")}
     >
       <View style={styles.mainContainer}>
         <View style={styles.container}>
@@ -41,23 +41,20 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  container: {
-    alignItems: "center",
-  },
   text: {
     fontSize: 50,
-    color: "white",
+    color: "#513404ff",
   },
+
   slogan: {
     fontSize: 18,
-    color: "white",
+    color: "#513404ff",
     marginTop: 10,
   },
   buttonContainer: {
-    marginTop: 25,
+    marginTop: 20,
     width: "80%",
     alignItems: "center",
   },
 });
-
 export default HomeScreen;

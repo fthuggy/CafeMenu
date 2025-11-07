@@ -30,9 +30,9 @@ function MenuScreen({ navigation }) {
 
   return (
     <ImageBackground
-      blurRadius={10}
+       blurRadius={3}
       style={styles.background}
-      source={require("../assets/cafe.jpg")}
+      source={require("../assets/coffeshop5.jpg")}
     >
       <TouchableOpacity
         style={{ position: "absolute", top: 50, left: 20, zIndex: 10 }}

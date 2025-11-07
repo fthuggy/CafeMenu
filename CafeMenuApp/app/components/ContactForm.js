@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: "#000",
+    borderColor: "#513404ff",
     borderRadius: 8,
     padding: 12,
     marginBottom: 12,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   buttonWrapper: {
     marginTop: 10,
     borderRadius: 8,
-    backgroundColor: "#000",
+    backgroundColor: "#513404ff",
   },
 });
 

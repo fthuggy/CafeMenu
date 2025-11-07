@@ -19,11 +19,12 @@ function MenuItem({ name, price, image }) {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "white",
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
     borderRadius: 15,
+    borderWidth: 1,
     padding: 10,
     marginVertical: 5,
-    shadowColor: "#000",
+   borderColor: 'rgba(255, 255, 255, 0.3)',
     width: "90%",
     flexDirection: "row",
     alignItems: "center",
@@ -46,12 +47,14 @@ marginLeft: 10,
     fontSize: 18,
     fontWeight: "bold",
     textAlign: "right",
+     color: "#513404ff",
    
   },
   price: {
     fontSize: 16,
     fontWeight: "600",
     textAlign: "right",
+    color: "#513404ff",
   },
 });
 
