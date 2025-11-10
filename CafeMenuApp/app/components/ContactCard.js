@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-const iconColor =  "#513404ff";
+const iconColor = "#513404ff";
 
 function ContactCard({ name, size = 80, title, text, buttonLabel, onPress }) {
   return (
@@ -30,11 +30,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginTop: 10,
-    color: "#513404ff"
+    color: "#513404ff",
   },
   text: {
     marginBottom: 10,
-     
   },
   button: {
     backgroundColor: "rgba(255, 255, 255, 0.2)",
@@ -42,8 +41,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   buttonText: {
-
-    color:  "#513404ff",
+    color: "#513404ff",
     fontWeight: "bold",
     alignSelf: "center",
   },

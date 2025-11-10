@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./app/screens/HomeScreen";
 import MenuScreen from "./app/screens/MenuScreen";
 import ContactScreen from "./app/screens/ContactScreen";
+import CheckoutScreen from "./app/screens/CheckoutScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,11 @@ export default function App() {
         <Stack.Screen
           name="Contact"
           component={ContactScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Checkout"
+          component={CheckoutScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
