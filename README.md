@@ -41,5 +41,9 @@ The project was an exciting opportunity to explore mobile UX, responsive design,
 
 - Save favorite items  
 - Integrate real payment options  
-- Add more interactive animations  
+- Add more interactive animations
+
+ <p align="center">
+  <img src="./assets/Cafeapp.png" alt="Cafeapp" width="400">
+</p> 
 
