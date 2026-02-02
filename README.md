@@ -43,7 +43,7 @@ The project was an exciting opportunity to explore mobile UX, responsive design,
 - Integrate real payment options  
 - Add more interactive animations
 
- <p align="center">
-  <img src="./assets/Cafeapp.png" alt="Cafeapp" width="400">
-</p> 
+<p align="center">
+  <img src="app/assets/Cafeapp.png" alt="Cafeapp" width="400">
+</p>
 
